@@ -3,8 +3,10 @@ from git import Repo
 import os
 import shutil
 
-Repo.clone_from('https://github.com/Sergiotm87/kitchen-ansible-WordpressNginx', '{{cookiecutter.role_name}}', branch='master')
+#clone repository
+Repo.clone_from('{{ansible_url}}', '{{cookiecutter.role_name}}', branch='master')
 
+#copy all files from repository to working directory (cannot clone into not empy directory)
 path = os.getcwd()+"/{{cookiecutter.role_name}}/"
 moveto = os.getcwd()+"/"
 files = os.listdir(path)
