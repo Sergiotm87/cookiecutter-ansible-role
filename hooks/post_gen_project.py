@@ -13,4 +13,4 @@ for f in files:
     src = path+f
     dst = moveto+f
     shutil.move(src,dst)
-os.rmdir({{cookiecutter.role_name}})
+os.rmdir('{{cookiecutter.role_name}}')
