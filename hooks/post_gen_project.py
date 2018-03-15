@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-import git
+from git import Repo
 import os
 
-git.Git(os.getcwd()).clone("https://github.com/Sergiotm87/kitchen-ansible-WordpressNginx")
+Repo.clone_from('https://github.com/Sergiotm87/kitchen-ansible-WordpressNginx', {{cookiecutter.role_name}}, branch='master')
+
+print os.getcwd()
