@@ -4,7 +4,7 @@ import os
 import shutil
 
 #clone repository
-Repo.clone_from('{{ansible_url}}', '{{cookiecutter.role_name}}', branch='master')
+Repo.clone_from('{{cookiecutter.ansible_url}}', '{{cookiecutter.role_name}}', branch='master')
 
 #copy all files from repository to working directory (cannot clone into not empy directory)
 path = os.getcwd()+"/{{cookiecutter.role_name}}/"
