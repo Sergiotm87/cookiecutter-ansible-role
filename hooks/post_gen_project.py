@@ -26,5 +26,5 @@ newrepo = u.create_repo('{{cookiecutter.repo_name}}')
 
 #push to new repo
 repo = Repo(os.getcwd(), search_parent_directories=True)
-remote = repo.create_remote('testapi', url='https://'+os.environ['gituser']+':'+os.environ['gitpass']+'@github.com/'+{{cookiecutter.github_user}}+'/'+{{cookiecutter.repo_name}})
+remote = repo.create_remote('testapi', url='https://'+os.environ['gituser']+':'+os.environ['gitpass']+'@github.com/'+'{{cookiecutter.github_user}}'+'/'+'{{cookiecutter.repo_name}}')
 remote.push(refspec='{}:{}'.format('master', 'master'))
