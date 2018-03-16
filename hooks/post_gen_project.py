@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-from git import Repo
+from git import Repo,remote
 import os
 import shutil
+from github import Github
 
 #clone repository
 Repo.clone_from('{{cookiecutter.ansible_url}}', '{{cookiecutter.role_name}}', branch='master')
@@ -16,3 +17,14 @@ for f in files:
     dst = moveto+f
     shutil.move(src,dst)
 os.rmdir('{{cookiecutter.role_name}}')
+
+#create a repo using name/pass or token
+#g = Github(os.environ['gituser'], os.environ['gitpass'])
+g = Github(os.environ['gittoken'])
+u = g.get_user()
+newrepo = u.create_repo('{{cookiecutter.repo_name}}')
+
+#push to new repo
+repo = Repo(os.getcwd(), search_parent_directories=True)
+remote = repo.create_remote('testapi', url='https://'+os.environ['gituser']+':'+os.environ['gitpass']+'@github.com/'+{{cookiecutter.github_user}}+'/'+{{cookiecutter.repo_name}})
+remote.push(refspec='{}:{}'.format('master', 'master'))

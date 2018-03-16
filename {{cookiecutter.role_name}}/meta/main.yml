@@ -1,29 +1,4 @@
 ---
-
-allow_duplicates: {{cookiecutter.allow_duplicates}}
-
-galaxy_info:
+info:
   author: {{cookiecutter.full_name}}
   description: {{cookiecutter.short_description}}
-  license: "license (Apache 2.0)"
-  min_ansible_version: {{cookiecutter.min_ansible_version}}
-  platforms:
-    - name: Ubuntu
-      versions:
-        - trusty
-        - xenial
-  galaxy_tags:
-  # - cloud
-  # - cloud:ec2
-  # - cloud:gce
-  # - cloud:rax
-  # - clustering
-  # - database
-  # - database:nosql
-  # - database:sql
-  # - development
-  # - monitoring
-  # - networking
-  # - packaging
-  # - system
-  # - web
