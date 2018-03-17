@@ -3,7 +3,7 @@
   "email": "sergiotm87@gmail.com",
   "role_name": "kitchen",
   "ansible_url": "https://github.com/Sergiotm87/kitchen-ansible-WordpressNginx",
-  "github_user": "sergiotm87",
+  "github_user": "Sergiotm87",
   "repo_name": "ansible-kitchen",
   "short_description": "This Ansible Role infuses antigravity, you are warned",
   "release_date": "2017-03-15",
