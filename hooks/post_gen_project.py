@@ -18,7 +18,7 @@ for f in files:
     dst = moveto+f
     shutil.move(src,dst)
 os.rmdir('{{cookiecutter.role_name}}')
-os.rmdir('.git')
+shutil.rmtree(os.getcwd()+'/.git')
 
 #create a repo using name/pass or token
 #g = Github(os.environ['gituser'], os.environ['gitpass'])
